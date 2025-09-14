@@ -1,31 +1,36 @@
-import { renderToReadableStream } from "@vitejs/plugin-rsc/rsc";
-import App from "./App.tsx";
+import {
+  createTemporaryReferenceSet,
+  decodeAction,
+  decodeFormState,
+  decodeReply,
+  loadServerAction,
+  renderToReadableStream,
+} from "@vitejs/plugin-rsc/rsc";
+import { unstable_matchRSCServerRequest as matchRSCServerRequest } from "react-router";
+import { routes } from "./routes";
 
-export default async function handler(request: Request): Promise<Response> {
-  const root = <App />;
-  const rscStream = renderToReadableStream(root);
-
-  if (request.url.endsWith(".rsc")) {
-    return new Response(rscStream, {
-      headers: {
-        "Content-type": "text/x-component;charset=utf-8",
-      },
-    });
-  }
-
-  const ssrEntry = await import.meta.viteRsc.loadModule<
-    typeof import("./entry.ssr.tsx")
-  >("ssr", "index");
-
-  const htmlStream = await ssrEntry.handleSsr(rscStream);
-
-  return new Response(htmlStream, {
-    headers: {
-      "Content-type": "text/html",
+function fetchServer(request: Request) {
+  return matchRSCServerRequest({
+    request,
+    routes: routes(),
+    createTemporaryReferenceSet,
+    decodeAction,
+    decodeFormState,
+    decodeReply,
+    loadServerAction,
+    generateResponse(match) {
+      return new Response(renderToReadableStream(match.payload), {
+        status: match.statusCode,
+        headers: match.headers,
+      });
     },
   });
 }
 
-if (import.meta.hot) {
-  import.meta.hot.accept();
+export default async function handler(request: Request) {
+  const ssr = await import.meta.viteRsc.loadModule<
+    typeof import("./entry.ssr")
+  >("ssr", "index");
+
+  return ssr.generateHTML(request, fetchServer);
 }

@@ -1,19 +1,45 @@
-import { createFromReadableStream } from "@vitejs/plugin-rsc/browser";
+import { StrictMode, startTransition } from "react";
 import { hydrateRoot } from "react-dom/client";
-import "./index.css";
-import type { ReactNode } from "react";
+import "./index.scss";
 
-async function main() {
-  const rscResponse = await fetch(window.location.href + ".rsc");
-  const body = rscResponse.body;
+import {
+  createFromReadableStream,
+  createTemporaryReferenceSet,
+  encodeReply,
+  setServerCallback,
+} from "@vitejs/plugin-rsc/browser";
 
-  if (!body) {
-    throw new Error("Response in rsc with no body");
-  }
+import {
+  unstable_createCallServer as createCallServer,
+  unstable_getRSCStream as getRSCStream,
+  unstable_RSCHydratedRouter as RSCHydratedRouter,
+  type unstable_RSCPayload as RSCServerPayload,
+} from "react-router";
 
-  const root = await createFromReadableStream<ReactNode>(body);
+setServerCallback(
+  createCallServer({
+    createFromReadableStream,
+    createTemporaryReferenceSet,
+    encodeReply,
+  })
+);
 
-  hydrateRoot(document, root);
-}
+startTransition(async () => {
+  const payload = await createFromReadableStream<RSCServerPayload>(
+    getRSCStream()
+  );
 
-main();
+  const formState =
+    payload.type === "render" ? await payload.formState : undefined;
+
+  hydrateRoot(
+    document,
+    <StrictMode>
+      <RSCHydratedRouter
+        createFromReadableStream={createFromReadableStream}
+        payload={payload}
+      />
+    </StrictMode>,
+    { formState }
+  );
+});
