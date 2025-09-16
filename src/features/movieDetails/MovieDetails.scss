@@ -1,0 +1,126 @@
+.movie-detail {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--bg1), var(--bg2));
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    background-color: transparent;
+    z-index: 0;
+
+    .title {
+      font-family: var(--font-heading);
+      font-size: pxToRem(30);
+      font-weight: 700;
+      margin: 0;
+      color: var(--text);
+      letter-spacing: 0.2px;
+    }
+  }
+
+  .content {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr;
+    grid-template-areas: "image" "info";
+
+    .image-section {
+      grid-area: image;
+      display: flex;
+      justify-content: center;
+
+      .image-container {
+        width: 100%;
+        max-width: 320px;
+        aspect-ratio: 2/3;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+        background: color-mix(in oklab, var(--bg2) 70%, black);
+
+        .poster {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .placeholder {
+          width: 100%;
+          height: 100%;
+          display: grid;
+          place-items: center;
+          color: var(--muted);
+          background: linear-gradient(
+            135deg,
+            color-mix(in oklab, var(--bg1) 80%, white),
+            color-mix(in oklab, var(--bg2) 80%, white)
+          );
+        }
+      }
+    }
+
+    .info-section {
+      grid-area: info;
+
+      .actions {
+        margin-bottom: 24px;
+        display: flex;
+        gap: 12px;
+
+        button {
+          background: var(--color-primary);
+          color: var(--on-primary);
+          border: none;
+          padding: 10px 14px;
+          border-radius: 10px;
+          font-weight: 600;
+          box-shadow: 0 2px 18px var(--color-primary);
+        }
+      }
+
+      .description {
+        margin-bottom: 32px;
+
+        h2 {
+          font-family: var(--font-heading);
+          font-size: toRem(20);
+          font-weight: 700;
+          margin: 0 0 12px;
+          color: var(--on-secondary);
+        }
+
+        p {
+          font-size: pxToRem(16);
+          line-height: 1.7;
+          color: var(--text);
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    margin-top: 60px;
+    border-radius: 12px;
+    .content {
+      grid-template-columns: 320px 1fr;
+      grid-template-areas: "image info";
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .content {
+      grid-template-columns: 360px 1fr;
+    }
+    .image-section .image-container {
+      max-width: 360px;
+    }
+  }
+}

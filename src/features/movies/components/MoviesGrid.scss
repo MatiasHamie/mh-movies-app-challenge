@@ -1,0 +1,54 @@
+.movies-grid {
+  max-width: 100%;
+  width: 100%;
+  overflow: visible;
+
+  .category-section {
+    margin-bottom: 40px;
+
+    .category-title {
+      font-size: pxToRem(24);
+      font-weight: 700;
+      margin-bottom: 16px;
+      text-transform: capitalize;
+      color: #333;
+    }
+
+    .loading-message,
+    .error-message,
+    .empty-message {
+      padding: 32px 16px;
+      text-align: center;
+      font-size: pxToRem(16);
+    }
+
+    .loading-message {
+      color: #666;
+    }
+
+    .error-message {
+      color: #e74c3c;
+    }
+
+    .empty-message {
+      color: #999;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .category-section {
+      padding: 20px;
+      .category-title {
+        font-size: pxToRem(28);
+      }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .category-section {
+      .category-title {
+        font-size: pxToRem(32);
+      }
+    }
+  }
+}
