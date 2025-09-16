@@ -1,10 +1,10 @@
-import MovieDetails from "@features/movieDetails/MovieDetails";
 import {
   createServerQueryClient,
   prefetchMovieDetails,
 } from "@features/movies/queries";
 import { dehydrate } from "@tanstack/react-query";
 
+import MovieDetails from "@/features/movie-details/MovieDetails";
 import type { CategoryName } from "@/features/movies/types/categories";
 
 import QueryProvider from "../../providers/QueryProvider.client";
