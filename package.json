@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "node src/server.js",
     "build": "vite build",
-    "start": "NODE_ENV=production node server.js",
+    "start": "NODE_ENV=production node src/server.prod.mjs",
+    "preview": "pnpm build && pnpm start",
     "lint": "eslint src/**/*.{ts,tsx}",
     "lint:fix": "exec eslint --fix \"src/**/*.{ts,tsx}\""
   },
