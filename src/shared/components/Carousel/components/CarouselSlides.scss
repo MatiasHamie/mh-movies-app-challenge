@@ -1,0 +1,36 @@
+.carousel-slides-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-slides {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 1rem 3rem;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+  }
+
+  @media (min-width: 768px) {
+    gap: 1.25rem;
+    padding: 1rem 4.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    gap: 1.5rem;
+    padding: 1rem 6rem;
+  }
+}
