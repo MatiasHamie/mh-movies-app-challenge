@@ -1,20 +1,54 @@
+@use "./shared/styles/reset-css.scss";
+@use "./shared/styles/themes.scss";
+
+@forward "./shared/styles/utils.scss";
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/inter.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Oswald";
+  src: url("/fonts/oswald.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/poppins.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("/fonts/cormorant-garamond.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  --brand: #4f46e5;
+  --font-app: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial,
+    sans-serif;
+  font-family: "Poppins";
 }
-body {
-  margin: 0;
-  font-family: system-ui, sans-serif;
+
+.theme--action {
+  --font-heading: "Oswald", var(--font-app);
 }
-header {
-  padding: 1rem;
-  background: var(--brand);
-  color: red;
+
+.theme--drama {
+  --font-heading: "Poppins", var(--font-app);
 }
-main {
-  padding: 1rem;
-}
-a {
-  color: inherit;
-  text-decoration: none;
-  margin-right: 0.75rem;
+
+.theme--horror {
+  --font-heading: "Cormorant", var(--font-app);
 }
