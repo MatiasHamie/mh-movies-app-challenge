@@ -7,11 +7,20 @@ export function routes() {
       path: "",
       lazy: () => import("./pages/root"),
       children: [
-        { id: "home", index: true, lazy: () => import("./pages/home") },
         {
-          id: "about",
-          path: "about",
-          lazy: () => import("./pages/about"),
+          id: "movies",
+          index: true,
+          lazy: () => import("./pages/movies"),
+        },
+        {
+          id: "movie-detail",
+          path: "movie/:id/:category",
+          lazy: () => import("./pages/movie-detail"),
+        },
+        {
+          id: "wishlist",
+          path: "wishlist",
+          lazy: () => import("./pages/wishlist"),
         },
         {
           id: "404",
