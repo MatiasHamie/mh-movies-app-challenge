@@ -1,0 +1,52 @@
+.theme {
+  --text: #e8e8e8;
+  --muted: #a7a7a7;
+  --color-primary: #2a2a2a;
+  --on-primary: #fff;
+  --color-secondary: #141414;
+  --on-secondary: #dcdcdc;
+  --bg1: #101010;
+  --bg2: #0a0a0a;
+  --font-heading: var(--font-app);
+  color: var(--text);
+  font-family: var(--font-app);
+}
+
+.theme--action {
+  @extend .theme;
+  --color-primary: #0f62fe;
+  --on-primary: #ffffff;
+  --color-secondary: #0b1a2b;
+  --on-secondary: #e8f0ff;
+  --bg1: #0b0f14;
+  --bg2: #111a2e;
+  --text: #e9eef8;
+  --muted: #9fb2cf;
+  --font-heading: "Oswald", var(--font-app);
+}
+
+.theme--comedy {
+  @extend .theme;
+  --color-primary: #ff8a3d;
+  --on-primary: #111111;
+  --color-secondary: #2b1a0b;
+  --on-secondary: #ffe8d5;
+  --bg1: #1a1310;
+  --bg2: #241a14;
+  --text: #f4efe9;
+  --muted: #d7c6b9;
+  --font-heading: "Poppins", var(--font-app);
+}
+
+.theme--horror {
+  @extend .theme;
+  --color-primary: #b8002f;
+  --on-primary: #ffffff;
+  --color-secondary: #12060a;
+  --on-secondary: #eadde0;
+  --bg1: #0c0709;
+  --bg2: #15080c;
+  --text: #eae6e7;
+  --muted: #b8a6ac;
+  --font-heading: "Cormorant Garamond", var(--font-app);
+}
