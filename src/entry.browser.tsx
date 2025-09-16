@@ -1,5 +1,3 @@
-import { StrictMode, startTransition } from "react";
-import { hydrateRoot } from "react-dom/client";
 import "./index.scss";
 
 import {
@@ -8,7 +6,8 @@ import {
   encodeReply,
   setServerCallback,
 } from "@vitejs/plugin-rsc/browser";
-
+import { startTransition,StrictMode } from "react";
+import { hydrateRoot } from "react-dom/client";
 import {
   unstable_createCallServer as createCallServer,
   unstable_getRSCStream as getRSCStream,
