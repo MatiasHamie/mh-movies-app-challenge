@@ -9,7 +9,7 @@ interface BackButtonProps {
   label?: string;
 }
 
-export function BackButton({ to, label = "Volver" }: BackButtonProps) {
+export function BackButton({ to, label = "Go Back" }: BackButtonProps) {
   const navigate = useNavigate();
 
   const handleClick = () => {
