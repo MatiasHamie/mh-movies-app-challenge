@@ -71,18 +71,6 @@
       &.active {
         color: #007bff;
         background: rgba(0, 123, 255, 0.1);
-
-        &::after {
-          background: #007bff;
-          border-radius: 50%;
-          bottom: -20px;
-          content: "";
-          height: 4px;
-          left: 50%;
-          position: absolute;
-          transform: translateX(-50%);
-          width: 4px;
-        }
       }
 
       &:focus {

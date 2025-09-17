@@ -1,6 +1,8 @@
 .movie-card {
   border-radius: 20px;
   border: 1px solid rgba(0, 0, 0, 0.15);
+  border-bottom: none;
+
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -21,7 +23,7 @@
     display: flex;
     gap: 8px;
     justify-content: space-between;
-    min-height: 60px;
+    min-height: 70px;
     padding: 12px;
 
     .title {
@@ -35,7 +37,6 @@
       text-overflow: ellipsis;
 
       -webkit-box-orient: vertical;
-      height: 34px;
     }
   }
 
@@ -82,12 +83,16 @@
   }
 
   @media (min-width: 768px) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+
     .header {
       padding: 16px;
+      height: 80px;
 
       .title {
         font-size: pxToRem(16);
-        height: 100%;
+        line-clamp: 2;
+        -webkit-line-clamp: 2;
       }
     }
 
