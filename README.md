@@ -1,5 +1,9 @@
 # Movies App Challenge [See Screenshots](#screenshots)
 
+## URL to test the app
+
+[Deployed APP Link to test it](https://mh-movies-app-challenge-production.up.railway.app/)
+
 ## Personal Notes
 
 I have been working with NextJS for the last 4 years and I haven't worked with pure React in over 5 years, and the last version I used was React 17.2. So the hardest part for me was to investigate about how to configure SSR without using syntactic sugar from frameworks that adds the configuration automatically.
@@ -12,6 +16,7 @@ I chose:
 - TanStack Query for SSR (dehydrate) and parallel data fetching.
 
 There’s still room for optimization (streaming segmentation, better performance tuning).
+
 
 ## Stack
 
@@ -34,10 +39,6 @@ There’s still room for optimization (streaming segmentation, better performanc
 - [A developer handmade documentation for RSC in React Router](https://raphaelbronsveld.com/blog/rsc-in-rr-first-impressions?utm_source=chatgpt.com)
 
 ---
-
-## URL to test the app
-
-[Deployed APP Link to test it](https://mh-movies-app-challenge-production.up.railway.app/)
 
 ## Quick Start
 
