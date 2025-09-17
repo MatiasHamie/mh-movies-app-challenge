@@ -1,4 +1,4 @@
-# Movies App Challenge
+# Movies App Challenge [See Screenshots](#screenshots)
 
 ## Personal Notes
 
@@ -99,3 +99,19 @@ SSR prefetch + dehydrate with TanStack Query.
 
 /wishlist → Wishlist: (Mobile) Carousel + (Desktop) grid
 ```
+## Screenshots
+
+![WhatsApp Image 2025-09-17 at 12 15 54](https://github.com/user-attachments/assets/0cbed897-8199-4265-83c7-ba0c97bed3be)
+![WhatsApp Image 2025-09-17 at 12 11 30](https://github.com/user-attachments/assets/f2f82479-f13c-4e30-98ba-6d80cba6b504)
+![WhatsApp Image 2025-09-17 at 12 11 31](https://github.com/user-attachments/assets/4d065d2b-416c-400a-94e4-f660dca43b4d)
+![WhatsApp Image 2025-09-17 at 12 13 19](https://github.com/user-attachments/assets/f2b6789c-82fd-47d5-b0fd-91397dc7049d)
+![WhatsApp Image 2025-09-17 at 12 13 53](https://github.com/user-attachments/assets/31889244-7156-4584-a508-5c8244b988d8)
+![WhatsApp Image 2025-09-17 at 12 14 10](https://github.com/user-attachments/assets/9bdd6179-65e9-4a94-bba0-4e0d63f0dfd7)
+![WhatsApp Image 2025-09-17 at 12 14 26](https://github.com/user-attachments/assets/3403f5bf-7ba3-49e1-bb6d-4633d1e1e05a)
+![WhatsApp Image 2025-09-17 at 12 14 52](https://github.com/user-attachments/assets/6d3f4cac-be2c-479f-83c4-1d57eb00af7b)
+![WhatsApp Image 2025-09-17 at 12 15 18](https://github.com/user-attachments/assets/ff33c5a1-cefd-4aa1-8965-dcab903e1f82)
+![WhatsApp Image 2025-09-17 at 12 15 23](https://github.com/user-attachments/assets/b03b482b-1b6c-40a8-af61-edaf65600d0f)
+![WhatsApp Image 2025-09-17 at 12 15 34](https://github.com/user-attachments/assets/674bb338-4d4c-4c7b-a722-46a7ebd8a682)
+
+
+
